@@ -90,7 +90,7 @@ function playRound(hc, computerchoice) {
 
 
 
-for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 5; i++) {
 
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
