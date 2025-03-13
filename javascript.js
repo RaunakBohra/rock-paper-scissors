@@ -1,6 +1,6 @@
 
-var computerScore =  0;
-var humanScore=0;
+var computerScore = 0;
+var humanScore = 0;
 
 
 function getComputerChoice() {
@@ -41,7 +41,7 @@ function getHumanChoice() {
 
 
 function playRound(hc, computerchoice) {
-    
+
     if (hc === "rock" && computerchoice === "paper") {
         console.log("You Loose");
         computerScore = computerScore + 1;
@@ -89,14 +89,15 @@ function playRound(hc, computerchoice) {
 
 
 
+
 for (let i = 1; i <= 2; i++) {
-    
+
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
     playRound(humanSelection, computerSelection);
     console.log(`Round ${i}`);
-}   
+}
 
 if (humanScore > computerScore) {
     console.log(`User score: ${humanScore} \nComputer Score: ${computerScore} \nYou are the winner`)
