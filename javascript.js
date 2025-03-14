@@ -4,11 +4,7 @@ var humanScore = 0;
 
 
 function getComputerChoice() {
-
-    console.log("Hello World");
     let computerchoice;
-
-
     let computerchoicerandom = Math.random();
     console.log(computerchoicerandom)
 
