@@ -30,15 +30,32 @@ const container = document.querySelector("#container");
 
 
 const content = document.createElement("p");
-content.textContent = " Welcome to RPS, click button below to start"
+const welcome = document.createElement("div");
 
-content.innerHTML = ` <button class= "btn" id="rock">Rock</button>    
+welcome.textContent = " Welcome to RPS, click button below to start";
+container.appendChild(welcome);
+
+content.innerHTML = ` 
+<button class= "btn" id="rock">Rock</button>    
     <button class= "btn" id="paper">Paper</button>
-    <button class= "btn"  id="scissor">Scissor</button>`;
-    const btn = document.querySelector(".btn");
+    <button class= "btn"  id="scissor">Scissor</button>
+    <button id="reset">Reset</button>`
+    ;
+
 
 
 container.appendChild(content);
+
+const reset = document.querySelector("#reset");
+
+
+reset.addEventListener("click", ()=>{
+    result.textContent = "";
+    score.textContent = "";
+    computerScore = 0;
+    humanScore = 0;
+
+});
 
 
 const rock = document.querySelector("#rock");
@@ -82,50 +99,89 @@ scissor.addEventListener("click", ()=>{
 
  // }
 
+ const result = document.createElement("p");
+ const score = document.createElement("p");
 
 function playRound(hc, computerchoice) {
 
+    container.appendChild(result);
+    container.appendChild(score);
+
+
+
     if (hc === "rock" && computerchoice === "paper") {
+        
+
+        result.textContent = "You Loose";
+
         console.log("You Loose");
         computerScore = computerScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "paper" && computerchoice === "paper") {
-        console.log("It's a Draw");
+
+        result.textContent = "Draw";
+
         humanScore = humanScore + 1;
         computerScore = computerScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
 
     }
     else if (hc === "scissor" && computerchoice === "paper") {
+        result.textContent = "You Win";
+
         console.log("You Win");
+
         humanScore = humanScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "rock" && computerchoice === "rock") {
+        result.textContent = "Draw";
+
         console.log("It's a Draw");
+
         humanScore = humanScore + 1;
         computerScore = computerScore + 1;
-
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "paper" && computerchoice === "rock") {
+        result.textContent = "You Win";
+
         console.log("You Win");
+
+
         humanScore = humanScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "scissor" && computerchoice === "rock") {
         console.log("You Loose");
+        result.textContent = "You Loose";
+
         computerScore = computerScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "scissor" && computerchoice === "scissor") {
         console.log("It's a Draw");
+        result.textContent = "Draw";
+
         humanScore = humanScore + 1;
         computerScore = computerScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "rock" && computerchoice === "scissor") {
         console.log("You Win");
+        result.textContent = "You Win";
+
         humanScore = humanScore + 1;
+        score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
     else if (hc === "paper" && computerchoice === "scissor") {
         computerScore = computerScore + 1;
+
+
     }
-    console.log(`Your total score is ${humanScore} and computer's score is ${computerScore}`);
+    console.log(`Your total score is ${humanScore} and computer's score is ${computerScore}`)
+    let scorefinal= `Your total score is ${humanScore} and computer's score is ${computerScore}`;
 
 }
 
