@@ -9,17 +9,17 @@ function getComputerChoice() {
     console.log(computerchoicerandom)
 
     if (computerchoicerandom <= 0.33) {
-        computerchoice = "rock";
+        computerchoice = "Rock";
         console.log(`Computer Chose: ${computerchoice}`);
 
     }
     else if (computerchoicerandom <= .66) {
-        computerchoice = "scissor";
+        computerchoice = "Scissor";
         console.log(computerchoice);
         console.log(`Computer Chose: ${computerchoice}`);
     }
     else {
-        computerchoice = "paper";
+        computerchoice = "Paper";
         console.log(`Computer Chose: ${computerchoice}`);
     }
     return computerchoice;
@@ -60,7 +60,7 @@ reset.addEventListener("click", ()=>{
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", ()=>{
-    hc="rock";
+    hc="Rock";
     const computerSelection = getComputerChoice();
     playRound(hc,computerSelection)
     ;
@@ -69,7 +69,7 @@ rock.addEventListener("click", ()=>{
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", ()=>{
-    hc="paper";
+    hc="Paper";
     console.log(hc);
     const computerSelection = getComputerChoice();
     playRound(hc,computerSelection)
@@ -78,7 +78,7 @@ paper.addEventListener("click", ()=>{
 })
 const scissor = document.querySelector("#scissor")
 scissor.addEventListener("click", ()=>{
-    hc="scissor";
+    hc="Scissor";
     console.log(hc);
     const computerSelection = getComputerChoice();
     playRound(hc,computerSelection)
@@ -109,34 +109,34 @@ function playRound(hc, computerchoice) {
 
 
 
-    if (hc === "rock" && computerchoice === "paper") {
+    if (hc === "Rock" && computerchoice === "Paper") {
         
 
-        result.textContent = "You Loose";
+        result.textContent = `Computer Selected ${computerchoice}, You Loose`;
 
         console.log("You Loose");
         computerScore = computerScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "paper" && computerchoice === "paper") {
+    else if (hc === "Paper" && computerchoice === "Paper") {
 
-        result.textContent = "Draw";
+        result.textContent = `Computer Selected ${computerchoice} Its a Draw`;
 
         humanScore = humanScore + 1;
         computerScore = computerScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
 
     }
-    else if (hc === "scissor" && computerchoice === "paper") {
-        result.textContent = "You Win";
+    else if (hc === "Scissor" && computerchoice === "Paper") {
+        result.textContent = `Computer Selected ${computerchoice} You Win`;
 
         console.log("You Win");
 
         humanScore = humanScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "rock" && computerchoice === "rock") {
-        result.textContent = "Draw";
+    else if (hc === "Rock" && computerchoice === "Rock") {
+        result.textContent = `Computer Selected ${computerchoice} Its a Draw`;
 
         console.log("It's a Draw");
 
@@ -144,8 +144,8 @@ function playRound(hc, computerchoice) {
         computerScore = computerScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "paper" && computerchoice === "rock") {
-        result.textContent = "You Win";
+    else if (hc === "Paper" && computerchoice === "Rock") {
+        result.textContent = `Computer Selected ${computerchoice} You Win`;
 
         console.log("You Win");
 
@@ -153,30 +153,32 @@ function playRound(hc, computerchoice) {
         humanScore = humanScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "scissor" && computerchoice === "rock") {
+    else if (hc === "Scissor" && computerchoice === "Rock") {
         console.log("You Loose");
-        result.textContent = "You Loose";
+        result.textContent = `Computer Selected ${computerchoice} You Loose`;
 
         computerScore = computerScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "scissor" && computerchoice === "scissor") {
+    else if (hc === "Scissor" && computerchoice === "Scissor") {
         console.log("It's a Draw");
-        result.textContent = "Draw";
+        result.textContent = `Computer Selected ${computerchoice} Its a Draw`;
 
         humanScore = humanScore + 1;
         computerScore = computerScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "rock" && computerchoice === "scissor") {
+    else if (hc === "Rock" && computerchoice === "Scissor") {
         console.log("You Win");
-        result.textContent = "You Win";
+        result.textContent = `Computer Selected ${computerchoice} You Win`;
 
         humanScore = humanScore + 1;
         score.textContent = `Computer score is ${computerScore} your score is ${humanScore}`;
     }
-    else if (hc === "paper" && computerchoice === "scissor") {
+    else if (hc === "Paper" && computerchoice === "Scissor") {
         computerScore = computerScore + 1;
+        result.textContent = `Computer Selected ${computerchoice} You Loose`;
+
 
 
     }
